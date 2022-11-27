@@ -2,6 +2,7 @@ package com.majumbum.youtube_clone.scopes.user.entities;
 
 import java.util.Arrays;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 public enum TestUser {
@@ -15,7 +16,7 @@ public enum TestUser {
             new HashSet<UserRole>(Arrays.asList(UserRole.USER , UserRole.MODERATOR))),
     USER_THREE("user" , "user" , "user@mail.com" ,
                      "user" , "test", Gender.female,
-                     new HashSet<UserRole>(Arrays.asList(UserRole.USER)));
+                     new HashSet<UserRole>(List.of(UserRole.USER)));
 
     public final String firstname;
     public final String lastname;

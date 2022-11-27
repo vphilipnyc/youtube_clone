@@ -58,7 +58,7 @@ public class UserService {
             gender = Gender.female;
 
         User user = new User(signUpDto.firstname, signUpDto.lastname, signUpDto.email, signUpDto.nickname,
-                signUpDto.password, new HashSet<UserRole>(Arrays.asList(UserRole.USER)), gender);
+                signUpDto.password, new HashSet<UserRole>(List.of(UserRole.USER)), gender);
 
         generateAndSaveNewValidationTokenForUser(user);
         rehashPassword(user.hashedPassword , user);
@@ -88,8 +88,7 @@ public class UserService {
     }
 
     public Optional<User> findUserById(Long id) {
-        Optional<User> byId = userRepository.findById(id);
-        return byId;
+        return userRepository.findById(id);
     }
 
     public boolean doesEmailAlreadyExists(final String email) {
