@@ -1,7 +1,6 @@
 package com.majumbum.youtube_clone.scopes.auth.forms;
 
 
-import com.majumbum.youtube_clone.scopes.user.entities.Gender;
 import com.majumbum.youtube_clone.validation.Regexes;
 import com.majumbum.youtube_clone.validation.ValidEmail;
 

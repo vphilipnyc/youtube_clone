@@ -1,24 +1,17 @@
 package com.majumbum.youtube_clone.scopes.videos.controller;
 
-import com.majumbum.youtube_clone.YoutubeCloneApplication;
 import com.majumbum.youtube_clone.scopes.auth.payload.response.MessageResponse;
 import com.majumbum.youtube_clone.scopes.videos.entities.Comment;
 import com.majumbum.youtube_clone.scopes.videos.entities.Video;
 import com.majumbum.youtube_clone.scopes.videos.services.VideoService;
-import org.h2.util.IOUtils;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.core.io.ClassPathResource;
 import org.springframework.core.io.PathResource;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.util.StreamUtils;
 import org.springframework.web.bind.annotation.*;
 
-import java.awt.*;
-import java.io.File;
 import java.io.IOException;
-import java.nio.file.Path;
-import java.nio.file.Paths;
 import java.util.List;
 import java.util.Optional;
 
