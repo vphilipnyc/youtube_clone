@@ -31,16 +31,14 @@ public class CustomAuthenticationProvider implements AuthenticationProvider {
         final String password = authentication.getCredentials().toString();
 
         final Optional<User> user = userService.findUserByEmail(email);
-        if (!user.isPresent())
+        if (user.isEmpty())
             throw new UsernameNotFoundException("Email '" + email + "' not found.");
 
         if (!passwordEncoder.matches(password, user.get().getHashedPassword()))
             throw new BadCredentialsException("Password wrong.");
 
-        final UsernamePasswordAuthenticationToken auth = new UsernamePasswordAuthenticationToken(user.get(), user.get().getHashedPassword(),
+        return new UsernamePasswordAuthenticationToken(user.get(), user.get().getHashedPassword(),
                 user.get().getAuthorities());
-
-        return auth;
     }
 
     @Override
