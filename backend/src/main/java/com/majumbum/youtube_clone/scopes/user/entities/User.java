@@ -73,7 +73,7 @@ public class User implements UserDetails , Serializable {
     private Set<Long> savedVideoId = new HashSet<>();
 
     @SuppressWarnings("unused")
-    public User(){};
+    public User(){}
 
     public User(String firstname , String lastname , String email , String nickname , String password , Set<UserRole> grantedAuthorities , Gender gender){
         this.firstname = firstname;
